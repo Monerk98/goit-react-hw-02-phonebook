@@ -5,6 +5,10 @@ import PropTypes from "prop-types";
 export default class Form extends Component {
   state = { name: "", number: "" };
 
+  static propTypes = {
+    onSubmit: PropTypes.func.isRequired,
+  };
+
   handleChange = (e) => {
     const { name, value } = e.currentTarget;
     this.setState({ [name]: value });
@@ -52,7 +56,3 @@ export default class Form extends Component {
     );
   }
 }
-
-Form.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
-};
